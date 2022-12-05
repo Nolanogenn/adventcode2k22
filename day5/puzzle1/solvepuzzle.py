@@ -11,10 +11,7 @@ for crate in crates:
 
 for move in moves:
     compressed_move = [int(x) for x in move.split() if x.isnumeric()]
-    movement = compressed_move[0]
-    source = compressed_move[1]
-    print(move)
-    target = compressed_move[2]
+    movement, source,target = compressed_move
     for m in range(movement):
         tomove = stacks[source].pop()
         stacks[target].append(tomove)
