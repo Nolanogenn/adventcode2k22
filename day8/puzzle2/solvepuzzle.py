@@ -15,9 +15,7 @@ for i in range(numRows):
     for j in range(numCols):
         if (i != 0 and j != 0) and (i!=98 and j != 98):
             column = columns[j]
-            print('----')
             elem = row[j]
-            print('working on ', i, j, elem)
             u = d = l = r = 0
             for up in range(i-1, -1, -1):
                 u += 1
@@ -35,26 +33,8 @@ for i in range(numRows):
                 r += 1
                 if elem <= row[right]:
                     break
-            print(u, d, r, l)
             score = u*d*r*l
-            print(score)
 
-            #arrayUp = column[:i][::-1]
-            #arrayLeft = row[:j][::-1]
-            #arrayDown = column[i+1:]
-            #arrayRight = row[j+1:]
-
-            #arrays = [arrayUp, arrayDown, arrayRight, arrayLeft]
-            #score = 1
-            #found=False
-            #for a in arrays:
-            #    for k,e in enumerate(a):
-            #        if e >= elem:
-            #            score *= k+1
-            #            found=True
-            #            break
-            #    if found == False:
-            #        score *= len(list(a))
             if score > highestScore:
                 highestScore = score
 
